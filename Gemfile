@@ -25,7 +25,7 @@ gem 'net-smtp'
 gem 'psych', '~> 3.1' # YAML解釈用のgem
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors' #オリジンのCORSを許可するためのgem
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
