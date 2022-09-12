@@ -6,10 +6,10 @@ module Api
         # フロントから配列で値が送られてくる。whereで配列を返す
         posted_line_foods = LineFood.where(id: params[:line_food_ids])
         order = Order.new(
-          total_place: total_price(posted_line_foods),
+          total_price: total_price(posted_line_foods),
         )
         # paramsで渡ってきたidのデータのactiveをfalseにする
-        if order.save_with_update_line_foods!(id: params[:line_food_ids])
+        if order.save_with_update_line_foods!(posted_line_foods) # 引数ミスがあった場所
           render json: {}, status: :no_content
         else
           render json: {},status: :internal_server_error
